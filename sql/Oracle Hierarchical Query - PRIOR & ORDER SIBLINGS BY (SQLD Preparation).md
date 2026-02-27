@@ -1,0 +1,108 @@
+📚 Oracle Hierarchical Query - PRIOR & ORDER SIBLINGS BY
+1️⃣ Hierarchical Query 기본 구조
+SELECT column_list
+FROM table_name
+START WITH root_condition
+CONNECT BY PRIOR parent_column = child_column
+ORDER SIBLINGS BY column;
+실행 순서 (SQLD 시험 핵심 ⭐)
+
+FROM
+
+START WITH
+
+CONNECT BY
+
+WHERE
+
+SELECT
+
+ORDER SIBLINGS BY
+
+2️⃣ PRIOR
+✅ 개념
+
+PRIOR는 부모 행을 참조하는 연산자이다.
+
+PRIOR = 부모
+
+✅ 기본 예제 (하향식, Top → Down)
+SELECT LEVEL, EMPNO, ENAME, MGR
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO = MGR;
+의미
+부모 EMPNO = 자식 MGR
+특징
+
+LEVEL은 1부터 시작
+
+루트부터 아래 방향으로 탐색
+
+✅ 상향식 (Bottom → Up)
+SELECT LEVEL, EMPNO, ENAME, MGR
+FROM EMP
+START WITH ENAME = 'SCOTT'
+CONNECT BY EMPNO = PRIOR MGR;
+의미
+자식 EMPNO = 부모 MGR
+핵심
+구문	방향
+PRIOR EMPNO = MGR	하향식
+EMPNO = PRIOR MGR	상향식
+3️⃣ LEVEL
+✅ 개념
+
+현재 계층의 깊이
+
+루트는 LEVEL = 1
+
+SELECT LEVEL, ENAME
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO = MGR;
+4️⃣ ORDER BY vs ORDER SIBLINGS BY
+❌ ORDER BY (계층 깨짐)
+SELECT LEVEL, ENAME
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO = MGR
+ORDER BY ENAME;
+
+→ 전체 정렬
+→ 계층 구조 깨짐
+
+✅ ORDER SIBLINGS BY (계층 유지)
+SELECT LEVEL, ENAME
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO = MGR
+ORDER SIBLINGS BY ENAME;
+개념
+
+같은 부모(형제)끼리만 정렬
+
+5️⃣ 자주 같이 나오는 함수
+키워드	설명
+LEVEL	계층 깊이
+CONNECT_BY_ROOT	최상위 루트 값
+CONNECT_BY_ISLEAF	리프 노드 여부
+SYS_CONNECT_BY_PATH	경로 문자열
+예시: 경로 출력
+SELECT EMPNO,
+       SYS_CONNECT_BY_PATH(ENAME, '→') AS PATH
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO = MGR;
+6️⃣ SQLD 시험 핵심 포인트 정리 ⭐⭐⭐
+
+✔ PRIOR = 부모 참조
+✔ START WITH → CONNECT BY 순서 중요
+✔ PRIOR 위치에 따라 방향 결정
+✔ WHERE절은 계층 생성 후 필터링
+✔ LEVEL은 1부터 시작
+✔ 계층 유지 정렬은 ORDER SIBLINGS BY
+
+🔥 한 줄 암기 정리
+PRIOR는 부모,
+SIBLINGS는 형제만 정렬
