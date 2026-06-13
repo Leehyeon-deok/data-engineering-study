@@ -64,3 +64,102 @@ SJF 보완형
 ✔ 핵심 암기
 
 “기다린 시간 + 실행시간 / 실행시간”
+
+IPsec (Internet Protocol Security)
+개념
+Network Layer(네트워크 계층)에서 동작하는 보안 프로토콜
+IP 패킷의 암호화, 인증, 무결성 보장
+VPN(Virtual Private Network) 구현에 사용
+특징
+네트워크 계층(IP 계층)에서 보안 제공
+기업의 사설망(VPN) 구축에 활용
+IP 패킷 자체를 보호
+구성 프로토콜
+AH (Authentication Header)
+데이터 무결성 제공
+송신자 인증 제공
+데이터 암호화는 제공하지 않음
+ESP (Encapsulating Security Payload)
+데이터 암호화 제공
+데이터 무결성 제공
+송신자 인증 제공
+암기
+IPsec = VPN + AH + ESP
+
+AH  → 인증(Authentication), 무결성
+ESP → 암호화(Encryption), 인증, 무결성
+C 언어 - Call by Value (값 전달)
+Swap이 실패하는 이유
+
+C는 기본적으로 Call by Value(값 전달) 방식이다.
+
+void swap(int a, int b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+int a = 10;
+int b = 20;
+
+swap(a, b);
+
+함수 호출 시 값이 복사되므로 원본 변수는 변경되지 않는다.
+
+암기
+❌ 원본 변경 안 됨
+swap(a, b);
+✅ 원본 변경 됨
+swap(&a, &b);
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+핵심
+값 전달(Call by Value)
+→ 원본 변경 X
+
+주소 전달(Pointer)
+→ 원본 변경 O
+C 언어 - 구조체 접근 연산자
+. (Dot) 연산자
+
+구조체 변수 접근
+
+struct node a;
+
+a.n1;
+-> (Arrow) 연산자
+
+구조체 포인터 접근
+
+struct node *p;
+
+p->n1;
+의미
+p->n1
+
+은
+
+(*p).n1
+
+과 동일하다.
+
+예제
+struct node a = {10, NULL};
+struct node *p = &a;
+a.n1     // 10
+p->n1    // 10
+(*p).n1  // 10
+암기
+.   → 구조체 변수 접근
+->  → 구조체 포인터 접근
+
+p->n1 = (*p).n1
+연결 리스트 예시
+head
+ ↓
+a(10) → b(20) → c(30)
+head->n1          // 10
+head->n2->n1      // 20
+head->n2->n2->n1 // 30
