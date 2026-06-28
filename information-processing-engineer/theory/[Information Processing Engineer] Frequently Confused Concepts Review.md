@@ -2,6 +2,7 @@
 1️⃣ SQL SELECT, DISTINCT, COUNT 개념 정리
 ✔ 문제 상황
 
+
 학생 테이블에
 
 전기과 50명
@@ -32,6 +33,9 @@
 
 SELECT는 중복 제거를 하지 않는다.
 
+
+
+
 🔹 (2) SELECT DISTINCT 학과 FROM 학생;
 
 👉 DISTINCT = 중복 제거
@@ -55,6 +59,8 @@ DISTINCT는 중복을 제거한다.
 
 GROUP BY와 유사한 역할.
 
+
+
 🔹 (3) SELECT COUNT(DISTINCT 학과) FROM 학생 WHERE 학과='전산과';
 
 먼저 WHERE 조건 적용
@@ -70,12 +76,18 @@ COUNT
 
 WHERE → DISTINCT → COUNT 순서로 처리됨.
 
+
+
 ⭐ 정리
-SQL	결과
-SELECT 학과	200
-SELECT DISTINCT 학과	3
-COUNT(DISTINCT 학과) WHERE 전산과	1
+SQL					결과
+SELECT 학과				200
+SELECT DISTINCT 학과			3
+COUNT(DISTINCT 학과) WHERE 전산과		1
+
+
 2️⃣ C언어 switch문과 break 없는 경우 (Fall Through)
+
+
 ✔ 코드
 int c = 1;
 switch (3) {
@@ -87,9 +99,11 @@ switch (3) {
    default: c--;
 }
 
+
+
 🔹 핵심 개념
 
-👉 switch문에서 break가 없으면 아래 case가 계속 실행됨 (Fall Through)
+👉 switch문에서 "break" 가 없으면 아래 case가 계속 실행됨 (Fall Through)
 
 🔹 실행 과정
 
@@ -113,11 +127,16 @@ c = -7 - 1 = -8
 👉 최종 결과
 -8
 
+
+
 ✔ 핵심 정리
 
 break 없으면 다음 case 계속 실행
 
 시험에서 매우 자주 출제됨.
+
+
+
 
 3️⃣ MD5 암호화 해시 알고리즘
 ✔ 특징
@@ -151,6 +170,9 @@ RFC 1321 표준
 현재는 충돌 공격 가능
 👉 보안 시스템에서는 SHA-256 등 사용.
 
+
+
+
 4️⃣ 릴리즈 노트 (Release Note) 구성 요소
 ✔ 문제 설명
 
@@ -171,7 +193,11 @@ RFC 1321 표준
 👉 정답
 헤더(Header, 머릿말)
 
+
+
 🔹 릴리즈 노트 주요 구성
+
+
 ✔ 1. Header (머릿말)
 
 기본 정보
@@ -182,11 +208,15 @@ RFC 1321 표준
 
 소프트웨어 이름
 
+
+
 ✔ 2. 개요
 
 변경 목적
 
 주요 기능
+
+
 
 ✔ 3. 변경 사항
 
@@ -196,17 +226,23 @@ RFC 1321 표준
 
 개선 내용
 
+
+
 ✔ 4. 영향도
 
 사용자 영향
 
 시스템 영향
 
+
+
 ✔ 5. 참고 사항
 
 설치 방법
 
 주의 사항
+
+
 
 ⭐ 시험 핵심 포인트 정리
 ✔ SQL
