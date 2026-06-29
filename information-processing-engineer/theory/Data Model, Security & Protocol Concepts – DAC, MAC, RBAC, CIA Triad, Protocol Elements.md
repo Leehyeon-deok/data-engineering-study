@@ -217,6 +217,7 @@ User → Role → Permission → Resource
 
 동기화
 
+
 Summary
 Data Model Components
 구성요소	설명
@@ -224,17 +225,17 @@ Structure	데이터 구조
 Operation	데이터 처리
 Constraint	데이터 제약 조건
 Access Control Models
-모델	의미	특징
-DAC	임의 접근통제	소유자가 권한 결정
-MAC	강제 접근통제	시스템이 권한 통제
-RBAC	역할 기반 접근통제	역할 중심 권한 관리
+모델	의미			특징
+DAC	임의 접근통제		소유자가 권한 결정
+MAC	강제 접근통제		시스템이 권한 통제
+RBAC	역할 기반 접근통제		역할 중심 권한 관리
 Information Security Triad
-요소	의미
+요소		의미
 Confidentiality	기밀성
-Integrity	무결성
+Integrity		무결성
 Availability	가용성
 Protocol Elements
-요소	의미
-Syntax	데이터 형식
+요소		의미
+Syntax		데이터 형식
 Semantics	데이터 의미
-Timing	데이터 전송 시간
+Timing		데이터 전송 시간
