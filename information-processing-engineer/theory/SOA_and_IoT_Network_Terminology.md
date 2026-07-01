@@ -1,4 +1,6 @@
 📌 SOA · IoT 네트워크 · 정형명세기법 핵심 정리
+
+
 1️⃣ SOA (Service-Oriented Architecture, 서비스 지향 아키텍처)
 🔹 정의
 
@@ -103,6 +105,7 @@ Master 중심 통신 구조
 
 “블루투스, Master/Slave, 소규모 네트워크”
 
+
 4️⃣ 지그비 (ZigBee)
 🔹 정의
 
@@ -130,11 +133,13 @@ IEEE 802.15.4 기반
 IoT 디바이스
 
 🔹 비교 (피코넷 vs 지그비)
-구분	피코넷	지그비
-기반	블루투스	IEEE 802.15.4
-전력	중간	매우 낮음
-구조	Master-Slave	Mesh
-용도	개인 기기	IoT 센서
+구분		피코넷		지그비
+기반		블루투스		IEEE 802.15.4
+전력		중간		매우 낮음
+구조		Master-Slave	Mesh
+용도		개인 기기		IoT 센서
+
+
 🔹 정처기 포인트 ⭐
 
 “저전력, IoT, 센서 네트워크” → 지그비
